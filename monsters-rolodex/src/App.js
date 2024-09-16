@@ -27,11 +27,19 @@ class App extends Component {
           <p>Hello There!!!</p>
           <p>{this.state.greetings}</p>
           <p>Hi {this.state.name}</p>
-          <button>
+          <button onClick={() => {
+            // any changes to the objects state will trigger virtual dom updates
+            // setState will look at the state object and look for the key-value changes
+            this.setState({
+              name: 'James',
+              greetings: 'Good day!'
+            });
+            console.log(this.state);
+          }}>
             Change Name
           </button>
         </header>
-      </div>
+      </div >
     );
   }
 }
