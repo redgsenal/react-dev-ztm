@@ -1,25 +1,38 @@
+import { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// converted to class Component
+class App extends Component {
+  // initial function run first
+  constructor() {
+    // calls the constructor of the parent component class
+    super();
 
+    // state is always a JSOn object
+    // key: value form
+    this.state = {
+      name: 'Reggie',
+      greetings: 'Have a nice day!'
+    }
+
+  }
+
+  // render() function tells what is the content
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>Hello There!!!</p>
+          <p>{this.state.greetings}</p>
+          <p>Hi {this.state.name}</p>
+          <button>
+            Change Name
+          </button>
+        </header>
+      </div>
+    );
+  }
+}
 export default App;
