@@ -46,6 +46,15 @@ class App extends Component {
           onChange={
             (event) => {
               console.log(event.target.value);
+              const searchName = event.target.value.toLocaleLowerCase();
+              // best practice; non-modifying methods; if an array needs to be modified, create a new array
+              const filteredMonsters = this.state.monsters.filter(
+                (monster) => {
+                  return monster.name.toLocaleLowerCase().includes(searchName)
+                });
+              this.setState(() => {
+                return { monsters: filteredMonsters };
+              })
             }
           } />
         {
