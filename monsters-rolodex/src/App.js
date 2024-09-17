@@ -24,7 +24,10 @@ class App extends Component {
         },
         {
           name: 'Bob'
-        }
+        },
+        {
+          name: 'Jacky'
+        },
       ]
     }
   }
@@ -36,7 +39,7 @@ class App extends Component {
         {
           // check appendix 1 on maps
           this.state.monsters.map((monster) => {
-            return <h1>{monster.name}</h1>
+            return <div key={monster.name}><h1>{monster.name}</h1></div>
           })
         }
       </div>
