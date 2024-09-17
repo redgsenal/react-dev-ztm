@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // converted to class Component
@@ -12,24 +11,20 @@ class App extends Component {
     // state is always a JSOn object
     // key: value form
     this.state = {
-      monsters: [
-        {
-          name: 'Linda'
-        },
-        {
-          name: 'Frank'
-        },
-        {
-          name: 'Jacky'
-        },
-        {
-          name: 'Bob'
-        },
-        {
-          name: 'Jacky'
-        },
-      ]
+      monsters: []
     }
+  }
+
+  // this method is called whenever the component is mounted; 1st time rendered on the page / DOM; run once
+  componentDidMount() {
+    // a promise called; see Appendix section
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((users) => this.setState(() => {
+        return { monsters: users }
+      },
+        () => { console.log(this.state) }
+      ));
   }
 
   // render() function tells what is the content
