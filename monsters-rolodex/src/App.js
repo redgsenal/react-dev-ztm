@@ -40,6 +40,14 @@ class App extends Component {
     console.log('render: ', 2);
     return (
       <div className="App">
+        <input className='search-box'
+          type='search'
+          placeholder='Search Monsters by Name'
+          onChange={
+            (event) => {
+              console.log(event.target.value);
+            }
+          } />
         {
           // check appendix 1 on maps
           this.state.monsters.map((monster) => {
