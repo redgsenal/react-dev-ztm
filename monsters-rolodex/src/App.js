@@ -13,7 +13,8 @@ class App extends Component {
     // key: value form
     // probably most of the time, set the state
     this.state = {
-      monsters: []
+      monsters: [],
+      searchField: ''
     }
     console.log('constructor: ', 1);
   }
@@ -38,31 +39,35 @@ class App extends Component {
   // this might call again whenever the state changes
   render() {
     console.log('render: ', 2);
+    // best practice; non-modifying methods; if an array needs to be modified, create a new array
+    const filteredMonsters = this.state.monsters.filter(
+      (monster) => {
+        return monster.name.toLocaleLowerCase().includes(this.state.searchField)
+      });
+    console.log('filtered monsters: ', filteredMonsters);
+
     return (
       <div className="App">
         <input className='search-box'
           type='search'
           placeholder='Search Monsters by Name'
-          onChange={
-            (event) => {
-              console.log(event.target.value);
-              const searchName = event.target.value.toLocaleLowerCase();
-              // best practice; non-modifying methods; if an array needs to be modified, create a new array
-              const filteredMonsters = this.state.monsters.filter(
-                (monster) => {
-                  return monster.name.toLocaleLowerCase().includes(searchName)
-                });
-              this.setState(() => {
-                return { monsters: filteredMonsters };
-              })
-            }
-          } />
+          onChange={(event) => {
+            const searchField = event.target.value.toLocaleLowerCase();
+            this.setState(() => {
+              return { searchField };
+            });
+          }}
+        />
         {
           // check appendix 1 on maps
-          this.state.monsters.map((monster) => {
-            return <div key={monster.name}><h1>{monster.name}</h1></div>
-          })
-        }
+          // use the new arrays and leave the original as is
+          filteredMonsters.map((monster) => {
+            return (
+              <div key={monster.id}>
+                <h1>{monster.name}</h1>
+              </div>
+            );
+          })}
       </div>
     );
   }
