@@ -9,6 +9,7 @@ class App extends Component {
     // calls the constructor of the parent component class
     super();
 
+    // initialize this.state with the following variables with its corresponding initialized values
     // state is always a JSOn object
     // key: value form
     // probably most of the time, set the state
@@ -27,10 +28,20 @@ class App extends Component {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) => this.setState(() => {
+        // when its resolved, do this
         return { monsters: users }
       },
+        // when is reject, do this
         () => { console.log(this.state) }
       ));
+  }
+
+  // optimize this function so that its stored and reuse later inside render
+  onSearchChange = (event) => {
+    const searchField = event.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
   }
 
   // render() function tells what is the content
@@ -39,11 +50,15 @@ class App extends Component {
   // this might call again whenever the state changes
   render() {
     console.log('render: ', 2);
+    // pull and separate object variables from ' this' and 'this.state'
+    const { monsters, searchField } = this.state;
+    const { onSearchChange } = this;
     // best practice; non-modifying methods; if an array needs to be modified, create a new array
-    const filteredMonsters = this.state.monsters.filter(
+    const filteredMonsters = monsters.filter(
       (monster) => {
-        return monster.name.toLocaleLowerCase().includes(this.state.searchField)
-      });
+        return monster.name.toLocaleLowerCase().includes(searchField)
+      }
+    );
     console.log('filtered monsters: ', filteredMonsters);
 
     return (
@@ -51,13 +66,7 @@ class App extends Component {
         <input className='search-box'
           type='search'
           placeholder='Search Monsters by Name'
-          onChange={(event) => {
-            const searchField = event.target.value.toLocaleLowerCase();
-            this.setState(() => {
-              return { searchField };
-            });
-          }}
-        />
+          onChange={onSearchChange} />
         {
           // check appendix 1 on maps
           // use the new arrays and leave the original as is
@@ -71,6 +80,5 @@ class App extends Component {
       </div>
     );
   }
-
 }
 export default App;
