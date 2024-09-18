@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import CardList from './components/card-list/card-list.component';
 import './App.css';
 
 // converted to class Component
@@ -76,7 +77,9 @@ class App extends Component {
                 <h1>{monster.name}</h1>
               </div>
             );
-          })}
+          })
+        }
+        <CardList />
       </div>
     );
   }
