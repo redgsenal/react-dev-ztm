@@ -68,18 +68,7 @@ class App extends Component {
           type='search'
           placeholder='Search Monsters by Name'
           onChange={onSearchChange} />
-        {
-          // check appendix 1 on maps
-          // use the new arrays and leave the original as is
-          filteredMonsters.map((monster) => {
-            return (
-              <div key={monster.id}>
-                <h1>{monster.name}</h1>
-              </div>
-            );
-          })
-        }
-        <CardList />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
