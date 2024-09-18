@@ -4,6 +4,7 @@ import './App.css';
 
 // converted to class Component
 class App extends Component {
+  // this is the parent component and is render first
   // initial function run first
   // constructors always runs first
   constructor() {
