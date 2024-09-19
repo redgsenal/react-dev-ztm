@@ -3,6 +3,7 @@
 // multiple components per child component is discourage
 // this is a child component and renders any child component if any
 import { Component } from "react";
+import CardMonster from "../card-monster/card-monster.component.jsx";
 import "./card-list.styles.css";
 
 class CardList extends Component {
@@ -15,9 +16,7 @@ class CardList extends Component {
 					const { id, name, email } = monster;
 					return (
 						<div className="card-container" key={id}>
-							<img alt={`monster ${name}`} src={`https://robohash.org/${id + 99}?set=set2&size=180x180`} />
-							<h2>{name}</h2>
-							<a href={`mailto:${email}`}>{email}</a>
+							<CardMonster id={id} name={name} email={email} />
 						</div>
 					);
 				})}
