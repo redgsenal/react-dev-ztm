@@ -1,17 +1,55 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react'; // react hooks
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
-
 import './App.css';
 
 // converting class base react to functional base react
 const App = () => {
+  console.log('render');
+
+  // useState is a hook
+  // destructure the variables from useState
+  // useState is an array that has a value and a function setValue
+  // useState will store only one value at a time
+  // useState = [value, setValue]
+  const [searchField, setSearchField] = useState('');
+  const [monsters, setMonsters] = useState([]);
+  const [filteredMonsters, setFilteredMonsters] = useState(monsters);
+  console.log({ searchField });
+  console.log({ monsters });
+
+  // useEffect consists of callback function and array to check if it changes
+  // useEffect will call the callback on initial render call
+  // if anyt of the array change, run the callback function
+  // an empty array meant that the callback fuction is called once
+  // useEffect(callback(), array[])
+  useEffect(() => {
+    console.log('useEffect fetch callback');
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((users) => setMonsters(users));
+  }, []);
+
+  // call a new filtered monsters whenever changes to monsters or search field
+  useEffect(() => {
+    console.log('useEffect filtered monsters callback');
+    const newFilteredMonsters = monsters.filter(
+      (monster) => {
+        return monster.name.toLocaleLowerCase().includes(searchField)
+      });
+    setFilteredMonsters(newFilteredMonsters);
+  }, [monsters, searchField]);
+
+  const onSearchChange = (event) => {
+    const searchFieldName = event.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldName);
+  }
 
   return (
     <div className="App">
       <h1 className='app-title'>Monsters Rolodex</h1>
-      {/* <SearchBox onChangeHandler={onSearchChange} placeHolder='Search Monster Names' className='search-box hello-world' />
-      <CardList monsters={filteredMonsters} /> */}
+      <SearchBox onChangeHandler={onSearchChange} placeHolder='Search Monster Names' className='search-box hello-world' />
+      <CardList monsters={filteredMonsters} />
     </div>
   );
 }
