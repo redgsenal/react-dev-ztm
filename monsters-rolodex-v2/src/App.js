@@ -4,8 +4,20 @@ import SearchBox from './components/search-box/search-box.component';
 
 import './App.css';
 
+// converting class base react to functional base react
+const App = () => {
+
+  return (
+    <div className="App">
+      <h1 className='app-title'>Monsters Rolodex</h1>
+      {/* <SearchBox onChangeHandler={onSearchChange} placeHolder='Search Monster Names' className='search-box hello-world' />
+      <CardList monsters={filteredMonsters} /> */}
+    </div>
+  );
+}
+
 // converted to class Component
-class App extends Component {
+/* class App extends Component {
   // this is the parent component and is render first
   // initial function run first
   // constructors always runs first
@@ -73,5 +85,5 @@ class App extends Component {
       </div>
     );
   }
-}
+}*/
 export default App;
