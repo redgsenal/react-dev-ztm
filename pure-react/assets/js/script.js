@@ -6,14 +6,14 @@ const Person = (props) => {
 }
 
 const persons = [
-    { key: 1, name: 'John', occupation: 'carpenter' },
-    { key: 2, name: 'Jill', occupation: 'clerk' },
-    { key: 3, name: 'Kaye', occupation: 'police' }
+    { name: 'John', occupation: 'carpenter' },
+    { name: 'Jill', occupation: 'clerk' },
+    { name: 'Kaye', occupation: 'police' }
 ]
 
 const createPersonElements = (persons) => {
     return React.createElement('ul', { key: 'person-listings' }, persons.map((person, i) => {
-        return React.createElement(Person, { key: 'person-' + person.key, name: person.name, occupation: person.occupation })
+        return React.createElement(Person, { key: 'person-' + i, name: person.name, occupation: person.occupation })
     }));
 }
 
