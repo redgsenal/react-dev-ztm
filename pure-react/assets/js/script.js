@@ -1,7 +1,7 @@
-const Person = props => {
-    return React.createElement('li', { key: props.key, className: 'person-item', 'data-key': props.key }, [
-        React.createElement('h1', { className: 'person-title', 'data-foo': 'foo-1' }, props.name),
-        React.createElement('p', { className: 'person-occupation', 'data-bar': 'bar-1' }, props.occupation)
+const Person = (props) => {
+    return React.createElement('li', { key: 'li-1', className: 'person-item' }, [
+        React.createElement('h1', { key: 'person-h1', className: 'person-title', 'data-foo': 'foo-1' }, props.name),
+        React.createElement('p', { key: 'person-p', className: 'person-occupation', 'data-bar': 'bar-1' }, props.occupation)
     ]);
 }
 
@@ -12,14 +12,14 @@ const persons = [
 ]
 
 const createPersonElements = (persons) => {
-    return React.createElement('ul', {}, persons.map((person, i) => {
-        return React.createElement(Person, { key: person.key, name: person.name, occupation: person.occupation })
+    return React.createElement('ul', { key: 'person-listings' }, persons.map((person, i) => {
+        return React.createElement(Person, { key: 'person-' + person.key, name: person.name, occupation: person.occupation })
     }));
 }
 
 const App = () => {
     return React.createElement('div', {}, [
-        React.createElement('h1', { className: 'title' }, "React is rendered"), createPersonElements(persons)
+        React.createElement('h1', { key: 'h1-app', className: 'title' }, "React is rendered"), createPersonElements(persons)
     ]);
 };
 
