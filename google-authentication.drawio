@@ -21,7 +21,7 @@
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-6" value="1. Sign-in to Google with a Google account" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-5">
           <mxGeometry x="-0.4259" y="2" relative="1" as="geometry">
-            <mxPoint x="-460" y="-391" as="offset" />
+            <mxPoint x="-470" y="-471" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-16" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-5">
@@ -37,7 +37,7 @@
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-8" value="2. Google authenticates wth user with an auth_token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-7">
           <mxGeometry x="0.4135" y="1" relative="1" as="geometry">
-            <mxPoint x="-448" y="-421" as="offset" />
+            <mxPoint x="-458" y="-506" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-17" value="2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-7">
@@ -53,7 +53,7 @@
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-10" value="3. The app with use the auth_token to Firebase DB to request for an access token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-9">
           <mxGeometry x="-0.001" y="3" relative="1" as="geometry">
-            <mxPoint x="-444" y="-180" as="offset" />
+            <mxPoint x="-454" y="-275" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-18" value="3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-9">
@@ -69,7 +69,7 @@
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-12" value="4. Firebase DB validates with Google the auth_token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-11">
           <mxGeometry x="-0.556" relative="1" as="geometry">
-            <mxPoint x="-871" y="-149" as="offset" />
+            <mxPoint x="-881" y="-244" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-19" value="4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-11">
@@ -85,7 +85,7 @@
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-14" value="5. Google validates the auth_token which Firebase DB wil now grant with an access token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-13">
           <mxGeometry x="0.2398" relative="1" as="geometry">
-            <mxPoint x="-733" y="-188" as="offset" />
+            <mxPoint x="-743" y="-283" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-20" value="5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-13">
@@ -101,7 +101,7 @@
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-21" value="6. Firebase DB grants access with an access token back to the app." style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-15">
           <mxGeometry x="-0.1088" y="3" relative="1" as="geometry">
-            <mxPoint x="-489" y="-32" as="offset" />
+            <mxPoint x="-499" y="-127" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-22" value="6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-15">
@@ -132,7 +132,27 @@
         </mxCell>
         <mxCell id="XT0uwpQFi3JfV9xLX5Nc-25" value="7. proceeds with CRUD methods along with access token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-23">
           <mxGeometry x="0.3567" y="-5" relative="1" as="geometry">
-            <mxPoint x="-384" y="60" as="offset" />
+            <mxPoint x="-404" y="-40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XT0uwpQFi3JfV9xLX5Nc-26" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="XT0uwpQFi3JfV9xLX5Nc-2" target="XT0uwpQFi3JfV9xLX5Nc-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="910" y="540" as="sourcePoint" />
+            <mxPoint x="850" y="510" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="770" y="180" />
+              <mxPoint x="540" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XT0uwpQFi3JfV9xLX5Nc-27" value="8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-26">
+          <mxGeometry x="-0.2296" y="7" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XT0uwpQFi3JfV9xLX5Nc-28" value="8. Fireback DB sends back responses (response code) to the CRUD request (methods)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XT0uwpQFi3JfV9xLX5Nc-26">
+          <mxGeometry x="-0.3563" y="16" relative="1" as="geometry">
+            <mxPoint x="-507" y="91" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
