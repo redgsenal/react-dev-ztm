@@ -11,12 +11,12 @@ import SignUpForm from '../../components/sign-up-form/sign-up-form.component'
 
 const SignIn = () => {
     useEffect(() => {
-        console.log('use effect here')
+        //console.log('use effect here')
         async function redirectGoogle() {
             const response = await getRedirectResult(auth)
-            console.log('get redirect result')
-            console.log({ auth })
-            console.log({ response })
+            //console.log('get redirect result')
+            //console.log({ auth })
+            //console.log({ response })
             if (response) {
                 const userDocRef = await createUserDocumentFromAuth(
                     response.user
@@ -30,9 +30,9 @@ const SignIn = () => {
     const logGoogleUser = async () => {
         const { user } = await signInWithGooglePopup()
         const userDocRef = createUserDocumentFromAuth(user)
-        console.log('google user')
-        console.log({ userDocRef })
-        console.log({ user })
+        //console.log('google user')
+        //console.log({ userDocRef })
+        //console.log({ user })
     }
     /* const logGoogleRedirectUser = async () => {
         const { user } = await signInWithGoogleRedirect()
