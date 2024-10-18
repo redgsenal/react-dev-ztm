@@ -69,8 +69,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+### Starting the app
+
+option 1: yarn start (preferred)
+option 2: npm start
 
 ### Docker
+
 docker-compose up --build --remove-orphans -d
 winpty docker exec -it reyna-clothing-web-1 bash
 docker exec -it reyna-clothing-web-1 bash
